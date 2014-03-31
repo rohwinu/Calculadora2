@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<head>
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="GatoLoco-FussionCreativa" />
+
+	<title>Sin título 1</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.2.css"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.2.js"></script>
+    <script>
+        function cs(){
+    	   //alert("hola");
+        	var panni=0
+        	var pmilza=0
+        	var ppiastrine=0
+        	var pbasofili=0
+        	var peosinofili=0
+        	var pmieloblasti=0
+        	var a=0
+        	var b=0
+        	var c=0
+        	var d=0
+        	var e=0
+        	var f=0
+        	var euro=0
+        	var calcolosokal=0
+        	panni=$("#Anni").val();
+        	pmilza=$("#Milza").val();
+        	ppiastrine=$("#Piastrine").val();
+        	pbasofili=$("#Basofili").val();
+        	peosinofili=$("#Eosinofili").val();
+        	pmieloblasti=$("#Mieloblasti").val();
+    
+    		a=0.0116*(panni-43.4);
+    		b=0.0345*(pmilza/10-7.51);
+    		c=0.188*((ppiastrine/700)*(ppiastrine/700)-0.563);
+    		d=0.0887*(pmieloblasti/10-2.1);
+    		calcolosokal=Math.exp(a+b+c+d);
+    		calcolosokal=Math.floor(calcolosokal*100)/100
+
+    		if (panni<50){I=0;}
+    		if (panni>49){I=1;}
+    		if (pbasofili<30){L=0;}
+    		if (pbasofili>29){L=1;}
+    		if (ppiastrine<1500){M=0;}
+    		if (ppiastrine>1499){M=1;}
+    		a=0.6666*I;
+    		b=0.042*(pmilza/10);
+    		c=0.0584*(pmieloblasti/10);
+    		d=0.0413*(peosinofili/10);
+    		e=0.2039*L;
+    		f=1.0956*M;
+    		euro=(a+b+c+d+e+f)*1000;
+    		euro=Math.floor(euro*100)/100
+
+    		if (calcolosokal < 0.8){$("#rissokal3").val(calcolosokal+" low");$("#rissokal").val(calcolosokal+" low");}
+    		else if (calcolosokal >= 0.8 && calcolosokal <= 1.2){$("#rissokal3").val(calcolosokal+" intermediate");$("#rissokal").val(calcolosokal+" intermediate");}
+    		else if (calcolosokal > 1.2){$("#rissokal").val(calcolosokal+" high");$("#rissokal3").val(calcolosokal+" high");}
+            
+    		if (euro < 781){$("#riseuro").val(euro+" low");$("#riseuro3").val(euro+" low");}
+    		else if (euro >= 781 && euro <= 1480){$("#riseuro").val(euro+" intermediate");$("#riseuro3").val(euro+" intermediate");}
+    		else if (euro > 1480){$("#riseuro").val(euro+" intermediate");$("#riseuro3").val(euro+" intermediate");}
+    	}
+    </script>
+    <script>
+        function cs2(){
+            var a=0;
+            var b=0;
+            var c=0;
+            var pmilza=0;
+            var pbasofili=0;
+            var probeutos=0;
+            var eutossc=0;
+            pmilza=$("#Milza2").val();
+            pbasofili=$("#Basofili2").val();
+    
+            
+            
+            if (pmilza < 0 || pmilza > 50) {$("#Milza2").val("Spleen value not in range 0-50");return}
+            if (pbasofili < 0 || pbasofili > 60) {$("#Basofili2").val("Basophil count not in range 0-60");return}
+
+            
+            a = (-2.1007);
+            b = 0.0700 * pbasofili;
+            c = 0.0402 * pmilza;
+            
+            probeutos=(Math.exp(a+b+c)) / (1 + Math.exp(a+b+c));
+            probeutos=Math.floor(probeutos*100)/100;
+
+            $("#probeutos").val(probeutos);
+            $("#probeutos3").val(probeutos);
+            
+            eutossc=7*pbasofili+4*pmilza;
+            eutossc=Math.floor(eutossc*100)/100;
+
+            $("#riseutos").val(eutossc);
+            $("#riseutos3").val(eutossc);
+            
+           
+            if (eutossc > 87) {$("#teutos").val("high");$("#teutos3").val("high");}
+            else if (eutossc <= 87) {$("#teutos").val("low");$("#teutos3").val("low");}
+        }
+    </script>
+    <script>
+        function borrarDatos()
+        {
+            $("#Anni").val("");
+        	$("#Milza").val("");
+        	$("#Piastrine").val("");
+        	$("#Basofili").val("");
+        	$("#Eosinofili").val("");
+        	$("#Mieloblasti").val("");
+            $("#Milza2").val("");
+            $("#Basofili2").val("");
+            $("#teutos").val("");
+            $("#probeutos").val("");
+            $("#riseutos").val("");
+            $("#rissokal").val("");
+            $("#riseuro").val("");
+            $("#rissokal3").val("");
+        	$("#riseuro3").val("");
+        	$("#teutos3").val("");
+        	$("#probeutos3").val("");
+        	$("#riseutos3").val("");
+            $("#resultadoGenerarDatos").html("");
+        }
+    </script>
+    <script>
+        function generarDatos()
+        {
+            var rissokal3=$("#rissokal3").val();
+        	var riseuro3=$("#riseuro3").val();
+        	var teutos3=$("#teutos3").val();
+        	var probeutos3=$("#probeutos3").val();
+        	var riseutos3=$("#riseutos3").val();
+            
+            $.ajax({
+                type:"GET",
+                url:"librery/funciones.php?accion=generarDatos"
+                +"&rissokal3="+rissokal3
+                +"&riseuro3="+riseuro3
+                +"&teutos3="+teutos3
+                +"&probeutos3="+probeutos3
+                +"&riseutos3="+riseutos3
+                ,
+                dataType:"text",
+                data:$(this).serialize(),
+                success:function(response)
+                {
+                    $("#resultadoGenerarDatos").html(response);
+                }
+            })
+        }
+    </script>
+    
+</head>
+
+<body>
+    <div data-role="page" data-theme="b" id="pagina1">
+        <!--         cabecera                 -->
+        <div data-role="header">
+            <h1>Bienvenido</h1>
+        </div>
+        <!--         contenido                 -->
+        <div data-role="content">
+            <!-- data-inline="true" en todos los botones que se quiera es para colocar los botones horizaontales -->
+            Este es el contenido principal
+        </div>
+        <!--         pie de pagina                 -->
+        <div data-role="footer" data-position="fixed">
+            <a data-role="button" href="#">Principal</a>
+            <a data-role="button" href="#pagina2">Primero</a>
+            <a data-role="button" href="#pagina3">Segundo</a>
+            <a data-role="button" href="#pagina4">Tercero</a>
+        </div>
+    </div>
+    
+    <div data-role="page" data-theme="b" id="pagina2">
+        <!--         cabecera                 -->
+        <div data-role="header">
+            <h1>Primer Aplicativo</h1>
+        </div>
+        <!--         contenido                 -->
+        <div data-role="content">
+            <!-- data-inline="true" en todos los botones que se quiera es para colocar los botones horizaontales -->
+            <div class="ui-field-contain">
+                <label for="textinput-1">Age:</label>
+                <input type="number" name="Anni" id="Anni" placeholder="years" value="">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">Spleen:</label>
+                <input type="number" name="Milza" id="Milza" placeholder="max. distance from costal margin cm x 10 (e.g. 6 cm = 60)" value="">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">Platelet:</label>
+                <input type="number" name="Piastrine" id="Piastrine" placeholder="Plt 109 L  ( e.g 350000 ml = 350 )" value="">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">Blood Basophils:</label>
+                <input type="number" name="Basofili" id="Basofili" placeholder="% x 10 ( e.g. 1.5% = 15 )" value="">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">Blood Eosinophils:</label>
+                <input type="number" name="Eosinofili" id="Eosinofili" placeholder="% x 10 ( e.g 2.6% = 26 )" value="">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">Blood Myeloblasts:</label>
+                <input type="number" name="Mieloblasti" id="Mieloblasti" placeholder="% x 10 ( e.g 0.7% = 7 )" value="">
+            </div>
+            <a data-role="button" href="" onclick="cs();return false;">Calcular</a>
+            <div class="ui-field-contain">
+                <label for="textinput-1">Sokal RR:</label>
+                <input type="text" name="rissokal" id="rissokal" placeholder="Result Sokal" value="">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">Hasford RR:</label>
+                <input type="text" name="riseuro" id="riseuro" placeholder="Result Hasford" value="">
+            </div>
+            <a data-role="button" href="" onclick="borrarDatos();return false;">Limpiar</a>
+        </div>
+        <!--         pie de pagina                 -->
+        <div data-role="footer" data-position="fixed">
+            <a data-role="button" href="#pagina1">Principal</a>
+            <a data-role="button" href="#">Primero</a>
+            <a data-role="button" href="#pagina3">Segundo</a>
+            <a data-role="button" href="#pagina4">Tercero</a>
+        </div>
+    </div>
+    
+    <div data-role="page" data-theme="b" id="pagina3">
+        <!--         cabecera                 -->
+        <div data-role="header">
+            <h1>Segundo Aplicativo</h1>
+        </div>
+        <!--         contenido                 -->
+        <div data-role="content">
+            <!-- data-inline="true" en todos los botones que se quiera es para colocar los botones horizaontales -->
+            <div class="ui-field-contain">
+                <label for="textinput-1">Spleen:</label>
+                <input type="number" min="0" max="60" required="required" name="Milza2" id="Milza2" placeholder="max. distance from costal margin cm" value="">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">Blood Basophils:</label>
+                <input type="number" name="Basofili2" id="Basofili2" placeholder="%" value="">
+            </div>
+            <a data-role="button" href="" onclick="cs2();return false;">Calcular</a>
+            <div class="ui-field-contain">
+                <label for="textinput-1">EUTOS Risk group:</label>
+                <input type="text" name="teutos" id="teutos" placeholder="Result EUTOS Risk" value="">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">EUTOS Probability for no CCgr at 18 months:</label>
+                <input type="text" name="probeutos" id="probeutos" placeholder="Result EUTOS Probability" value="">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">EUTOS Score:</label>
+                <input type="text" name="riseutos" id="riseutos" placeholder="Result EUTOS Score" value="">
+            </div>
+            <a data-role="button" href="" onclick="borrarDatos();return false;">Limpiar</a>
+        </div>
+        <!--         pie de pagina                 -->
+        <div data-role="footer" data-position="fixed">
+            <a data-role="button" href="#pagina1">Principal</a>
+            <a data-role="button" href="#pagina2">Primero</a>
+            <a data-role="button" href="#">Segundo</a>
+            <a data-role="button" href="#pagina4">Tercero</a>
+        </div>
+    </div>
+    
+    <div data-role="page" data-theme="b" id="pagina4">
+        <!--         cabecera                 -->
+        <div data-role="header">
+            <h1>Resultados</h1>
+        </div>
+        <!--         contenido                 -->
+        <div data-role="content">
+            <!-- data-inline="true" en todos los botones que se quiera es para colocar los botones horizaontales -->
+            <div class="ui-field-contain">
+                <label for="textinput-1">Sokal RR:</label>
+                <input type="text" name="rissokal3" id="rissokal3" placeholder="Result Sokal" value="">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">Hasford RR:</label>
+                <input type="text" name="riseuro3" id="riseuro3" placeholder="Result Hasford" value="">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">EUTOS Risk group:</label>
+                <input type="text" name="teutos3" id="teutos3" placeholder="Result EUTOS Risk" value="">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">EUTOS Probability for no CCgr at 18 months:</label>
+                <input type="text" name="probeutos3" id="probeutos3" placeholder="Result EUTOS Probability" value="">
+            </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">EUTOS Score:</label>
+                <input type="text" name="riseutos3" id="riseutos3" placeholder="Result EUTOS Score" value="">
+            </div>
+            <div id="resultadoGenerarDatos">
+            </div>
+            <a data-role="button" href="" onclick="generarDatos();return false;">Generar</a>
+        </div>
+        <!--         pie de pagina                 -->
+        <div data-role="footer" data-position="fixed">
+            <a data-role="button" href="#pagina1">Principal</a>
+            <a data-role="button" href="#pagina2">Primero</a>
+            <a data-role="button" href="#pagina3">Segundo</a>
+            <a data-role="button" href="#">Tercero</a>
+        </div>
+    </div>
+</body>
+</html>
