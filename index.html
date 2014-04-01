@@ -105,6 +105,8 @@
             
             // create a file and write to it
             root.getFile('bbgap.txt', {create: true}, create_writer, onFileSystemError);
+            root.getFile(writer.fileName,'bbgap.txt');
+            alert(writer.fileName);
         }
         
         // remove file system entry
@@ -120,9 +122,11 @@
             root.getFile('bbgap.txt', {create: false}, remove_file, onFileSystemError);
         } 
         
-        function openFile(url) {
-        window.open(entry.toURI()+"/bbgap.txt", '_blank');
-        }
+        /*function openFile(url) {
+                navigator.notification.open(entry.toURI())
+                root.op
+        window.open(+"/bbgap.txt", '_blank');
+        }*/
         
     </script>
     <title>File Create/Remove</title>
