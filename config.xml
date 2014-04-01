@@ -12,7 +12,7 @@
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />
     <preference name="fullscreen" value="true" />
-    <preference name="webviewbounce" value="true" />
+    <preference name="webviewbounce" value="false" />
     <preference name="prerendered-icon" value="true" />
     <preference name="stay-in-webview" value="false" />
     <preference name="ios-statusbarstyle" value="black-opaque" />
@@ -50,4 +50,10 @@
     <access origin="http://127.0.0.1*" />
     <plugin name="File" value="CDVFile" />
     <plugin name="FileTransfer" value="CDVFileTransfer" />
+    <access origin=".*" subdomains="true" />
+    <access origin="http://127.0.0.1*" />
+    <access origin="http://gatolocostudios.com*" />
+    <access origin="http://gatolocostudios.com/MobileCDC/*" />
+    <access origin="http://cdc.gatolocostudios.com/VersionMobile/*" />
+    <access origin="http://cdc.gatolocostudios.com/*" />
 </widget>
