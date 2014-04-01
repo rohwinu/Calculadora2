@@ -119,7 +119,11 @@
             // retrieve a file and truncate it
             root.getFile('bbgap.txt', {create: false}, remove_file, onFileSystemError);
         } 
- 
+        
+        function openFile(url) {
+        window.open(entry.toURI()+"/bbgap.txt", '_blank');
+        }
+        
     </script>
     <title>File Create/Remove</title>
   </head>
@@ -130,6 +134,7 @@
  
     <input type="button" value="Write File" onclick="writeFile();return false;" />
     <input type="button" value="Remove File" onclick="removeFile();return false;" />
+    <input type="button" value="Remove File" onclick="openFile();return false;" />
     
   </body>
 </html>
