@@ -125,6 +125,7 @@
         	$("#probeutos3").val("");
         	$("#riseutos3").val("");
             $("#resultadoGenerarDatos").html("");
+            $("#correo").val("");
         }
     </script>
     <script>
@@ -135,15 +136,17 @@
         	var teutos3=$("#teutos3").val();
         	var probeutos3=$("#probeutos3").val();
         	var riseutos3=$("#riseutos3").val();
+            var correo=$("#correo").val();
             
             $.ajax({
                 type:"GET",
-                url:"librery/funciones.php?accion=generarDatos"
+                url:"http://cdc.gatolocostudios.com/Calculadora/funciones.php?accion=generarDatos"
                 +"&rissokal3="+rissokal3
                 +"&riseuro3="+riseuro3
                 +"&teutos3="+teutos3
                 +"&probeutos3="+probeutos3
                 +"&riseutos3="+riseutos3
+                +"&correo="+correo
                 ,
                 dataType:"text",
                 data:$(this).serialize(),
@@ -154,77 +157,7 @@
             })
         }
     </script>
-    <script>
-        function obtenerDatos() {
-          return {
-            nombre: "Rohwinzon",
-            telefono: "7347206",
-            fecha: "7347206"
-          };
-        };
-         
-        //Genera un objeto Blob con los datos en un archivo TXT
-        function generarTexto(datos) {
-          var texto = [];
-          texto.push('Datos Personales:\n');
-          texto.push('Nombre: ');
-          texto.push(datos.nombre);
-          texto.push('\n');
-          texto.push('Teléfono: ');
-          texto.push(datos.telefono);
-          texto.push('\n');
-          texto.push('Fecha: ');
-          texto.push(datos.fecha);
-          texto.push('\n');
-          //El constructor de Blob requiere un Array en el primer 
-          //parámetro así que no es necesario usar toString. El 
-          //segundo parámetro es el tipo MIME del archivo
-          return new Blob(texto, {
-            type: 'text/plain'
-          });
-        };
-        
-        function descargarArchivo(contenidoEnBlob, nombreArchivo) {
-          //creamos un FileReader para leer el Blob
-          var reader = new FileReader();
-          //Definimos la función que manejará el archivo
-          //una vez haya terminado de leerlo
-          reader.onload = function (event) {
-            //Usaremos un link para iniciar la descarga 
-            var save = document.createElement('a');
-            save.href = event.target.result;
-            save.target = '_blank';
-            //Truco: así le damos el nombre al archivo 
-            save.download = nombreArchivo || 'archivo.dat';
-            var clicEvent = new MouseEvent('click', {
-              'view': window,
-              'bubbles': true,
-              'cancelable': true
-            });
-            //Simulamos un clic del usuario
-            //no es necesario agregar el link al DOM.
-            save.dispatchEvent(clicEvent);
-            //Y liberamos recursos...
-            (window.URL || window.webkitURL).revokeObjectURL(save.href);
-          };
-          //Leemos el blob y esperamos a que dispare el evento "load"
-          reader.readAsDataURL(contenidoEnBlob);
-        };
-        
-        function comenzar()
-        {
-            var datos = obtenerDatos();
-            descargarArchivo(generarTexto(datos), 'archivo.txt');
-        }
-    </script>
-    <script>
-    function imprimir()
-    {
-        window.print();
-        return false;
-    }
-
-    </script>
+    
 </head>
 
 <body>
@@ -237,7 +170,6 @@
         <div data-role="content">
             <!-- data-inline="true" en todos los botones que se quiera es para colocar los botones horizaontales -->
             Este es el contenido principal
-            <button onclick="imprimir();return false;">Imprimir</button>
         </div>
         <!--         pie de pagina                 -->
         <div data-role="footer" data-position="fixed">
@@ -368,9 +300,12 @@
                 <label for="textinput-1">EUTOS Score:</label>
                 <input type="text" name="riseutos3" id="riseutos3" placeholder="Result EUTOS Score" value="">
             </div>
+            <div class="ui-field-contain">
+                <label for="textinput-1">Enviar a:</label>
+                <input type="text" name="correo" id="correo" placeholder="Ingrese el Email" value="">
+            </div>
             <div id="resultadoGenerarDatos">
             </div>
-            <input type="button" id="boton-txt" onclick="comenzar();return false;" value="Descargar TXT" />
             <a data-role="button" href="" onclick="generarDatos();return false;">Generar</a>
         </div>
         <!--         pie de pagina                 -->
