@@ -105,9 +105,19 @@
             
             // create a file and write to it
             root.getFile('bbgap.txt', {create: true}, create_writer, onFileSystemError);
-            root.getFile(writer.fileName,'bbgap.txt');
-            alert(writer.fileName);
+            root.getFile("bbgap.txt", {create: true, exclusive: false}, success, fail);
         }
+        
+        function success(parent) {
+            console.log("Parent Name: " + parent.name);
+        }
+        
+        function fail(error) {
+            alert("Failed to retrieve file: " + error.code);
+        }
+        
+        // Retrieve an existing file, or create it if it does not exist
+        
         
         // remove file system entry
         function removeFile() {
