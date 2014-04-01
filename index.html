@@ -217,7 +217,14 @@
             descargarArchivo(generarTexto(datos), 'archivo.txt');
         }
     </script>
-    
+    <script>
+    function imprimir()
+    {
+        window.print();
+        return false;
+    }
+
+    </script>
 </head>
 
 <body>
@@ -230,6 +237,7 @@
         <div data-role="content">
             <!-- data-inline="true" en todos los botones que se quiera es para colocar los botones horizaontales -->
             Este es el contenido principal
+            <button onclick="imprimir();return false;">Imprimir</button>
         </div>
         <!--         pie de pagina                 -->
         <div data-role="footer" data-position="fixed">
