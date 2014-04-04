@@ -574,3 +574,16 @@ button[disabled],
 	outline-width: 1px;
 	outline-style: auto;
 }
+
+
+/* arreglo fuentes*/
+.est_fuente, legend, label  {
+	font-size:14px !important;
+
+	}
+
+
+	
+h1 {
+	font-size:15px !important;
+	}

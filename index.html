@@ -1,14 +1,17 @@
-<!DOCTYPE HTML>
-<head>
+<!DOCTYPE HTML><head>
 	<meta http-equiv="content-type" content="text/html" />
-	<meta name="author" content="GatoLoco-FussionCreativa" />
-
+	<meta name="author" content="GatoLoco Studios S.A.S" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Sin título 1</title>
     
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.css"/>
-    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.2.css"/>
+   <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.2.css"/>-
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.4.2.js"></script>
+    
+  
+<!--<link href="ios_inspired/styles.css" rel="stylesheet" />-->
+    <!--  <meta name="apple-mobile-web-app-status-bar-style" content="black">-->
     <script>
         function cs(){
     	   //alert("hola");
@@ -161,7 +164,7 @@
 </head>
 
 <body>
-    <div data-role="page" data-theme="b" id="pagina1">
+    <div data-role="page" id="pagina1"  data-theme="a" >
         <!--         cabecera                 -->
         <div data-role="header">
             <h1>Bienvenido</h1>
@@ -171,108 +174,139 @@
             <!-- data-inline="true" en todos los botones que se quiera es para colocar los botones horizaontales -->
             Este es el contenido principal
         </div>
-        <!--         pie de pagina                 -->
+        
+        <div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#page1" data-icon="gear" class="ui-btn-active">Inicio</a></li>
+				<li><a href="#pagina2" data-icon="custom" >S-H</a></li>
+				<li><a href="#pagina3" data-icon="custom">Eutos</a></li>
+                <li><a href="#pagina4" data-icon="mail">Resultado</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /footer -->
+        <!--         pie de pagina                 
         <div data-role="footer" data-position="fixed">
             <a data-role="button" href="#">Principal</a>
             <a data-role="button" href="#pagina2">Primero</a>
             <a data-role="button" href="#pagina3">Segundo</a>
             <a data-role="button" href="#pagina4">Tercero</a>
-        </div>
+        </div>-->
     </div>
     
-    <div data-role="page" data-theme="b" id="pagina2">
+    <div data-role="page" id="pagina2" data-theme="a" >
         <!--         cabecera                 -->
         <div data-role="header">
-            <h1>Primer Aplicativo</h1>
+            <h1>Sokal y Hasford</h1>
         </div>
         <!--         contenido                 -->
         <div data-role="content">
             <!-- data-inline="true" en todos los botones que se quiera es para colocar los botones horizaontales -->
-            <div class="ui-field-contain">
+		<form class="est_fuente">
+           <ul data-role="listview" data-inset="true">
+            <li class="ui-field-contain">
                 <label for="textinput-1">Age:</label>
                 <input type="number" name="Anni" id="Anni" placeholder="years" value="">
-            </div>
-            <div class="ui-field-contain">
+            </li>
+            <li class="ui-field-contain">
                 <label for="textinput-1">Spleen:</label>
                 <input type="number" name="Milza" id="Milza" placeholder="max. distance from costal margin cm x 10 (e.g. 6 cm = 60)" value="">
-            </div>
-            <div class="ui-field-contain">
+            </li>
+            <li class="ui-field-contain">
                 <label for="textinput-1">Platelet:</label>
                 <input type="number" name="Piastrine" id="Piastrine" placeholder="Plt 109 L  ( e.g 350000 ml = 350 )" value="">
-            </div>
-            <div class="ui-field-contain">
+            </li>
+            <li class="ui-field-contain">
                 <label for="textinput-1">Blood Basophils:</label>
                 <input type="number" name="Basofili" id="Basofili" placeholder="% x 10 ( e.g. 1.5% = 15 )" value="">
-            </div>
-            <div class="ui-field-contain">
+            </li>
+            <li class="ui-field-contain">
                 <label for="textinput-1">Blood Eosinophils:</label>
                 <input type="number" name="Eosinofili" id="Eosinofili" placeholder="% x 10 ( e.g 2.6% = 26 )" value="">
-            </div>
-            <div class="ui-field-contain">
+            </li>
+            <li class="ui-field-contain">
                 <label for="textinput-1">Blood Myeloblasts:</label>
                 <input type="number" name="Mieloblasti" id="Mieloblasti" placeholder="% x 10 ( e.g 0.7% = 7 )" value="">
-            </div>
-            <a data-role="button" href="" onclick="cs();return false;">Calcular</a>
-            <div class="ui-field-contain">
+            </li>
+            <a data-role="button" data-theme="b" href="" onclick="cs();return false;">Calcular</a>
+            <li class="ui-field-contain">
                 <label for="textinput-1">Sokal RR:</label>
-                <input type="text" name="rissokal" id="rissokal" placeholder="Result Sokal" value="">
-            </div>
-            <div class="ui-field-contain">
+                <input type="text" name="rissokal" id="rissokal" placeholder="Result Sokal" value="" readonly>
+            </li>
+            <li class="ui-field-contain">
                 <label for="textinput-1">Hasford RR:</label>
-                <input type="text" name="riseuro" id="riseuro" placeholder="Result Hasford" value="">
-            </div>
-            <a data-role="button" href="" onclick="borrarDatos();return false;">Limpiar</a>
+                <input type="text" name="riseuro" id="riseuro" placeholder="Result Hasford" value="" readonly>
+            </li>
+            <a data-role="button" data-theme="b" href="" onclick="borrarDatos();return false;">Limpiar</a>
+        </ul>
+     </form>
         </div>
-        <!--         pie de pagina                 -->
-        <div data-role="footer" data-position="fixed">
-            <a data-role="button" href="#pagina1">Principal</a>
-            <a data-role="button" href="#">Primero</a>
-            <a data-role="button" href="#pagina3">Segundo</a>
-            <a data-role="button" href="#pagina4">Tercero</a>
-        </div>
+        <!--         pie de pagina 
+                        -->
+      <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+			<ul>
+				<li><a href="#pagina1" data-icon="gear" >Inicio</a></li>
+				<li><a href="#pagina2" data-icon="custom" class="ui-btn-active">S-H</a></li>
+				<li><a href="#pagina3" data-icon="custom">Eutos</a></li>
+                <li><a href="#pagina4" data-icon="mail">Resultado</a></li>
+			</ul>
+		</div>
+       </div>
     </div>
     
-    <div data-role="page" data-theme="b" id="pagina3">
+    <div data-role="page" id="pagina3" data-theme="a" >
         <!--         cabecera                 -->
         <div data-role="header">
-            <h1>Segundo Aplicativo</h1>
+            <h1>Eutos Risk and Probability</h1>
         </div>
         <!--         contenido                 -->
         <div data-role="content">
             <!-- data-inline="true" en todos los botones que se quiera es para colocar los botones horizaontales -->
-            <div class="ui-field-contain">
-                <label for="textinput-1">Spleen:</label>
-                <input type="number" min="0" max="60" required="required" name="Milza2" id="Milza2" placeholder="max. distance from costal margin cm" value="">
-            </div>
-            <div class="ui-field-contain">
+            
+         <form class="est_fuente"> 
+         <ul data-role="listview" data-inset="true">
+           <li class="ui-field-contain">
+            <label for="textinput-1">Spleen:</label>
+            <input type="number" min="0" max="60" required="required" name="Milza2" id="Milza2" placeholder="max. distance from costal margin cm" value="">
+           </li>
+                                   
+            <li class="ui-field-contain">
                 <label for="textinput-1">Blood Basophils:</label>
                 <input type="number" name="Basofili2" id="Basofili2" placeholder="%" value="">
-            </div>
-            <a data-role="button" href="" onclick="cs2();return false;">Calcular</a>
-            <div class="ui-field-contain">
+            </li>
+            <a data-role="button" data-theme="b" href="" onclick="cs2();return false;">Calcular</a>
+            <li class="ui-field-contain">
                 <label for="textinput-1">EUTOS Risk group:</label>
-                <input type="text" name="teutos" id="teutos" placeholder="Result EUTOS Risk" value="">
-            </div>
-            <div class="ui-field-contain">
+                <input type="text" name="teutos" id="teutos" placeholder="Result EUTOS Risk" value="" readonly >
+            </li>
+            <li class="ui-field-contain">
                 <label for="textinput-1">EUTOS Probability for no CCgr at 18 months:</label>
-                <input type="text" name="probeutos" id="probeutos" placeholder="Result EUTOS Probability" value="">
-            </div>
-            <div class="ui-field-contain">
+                <input type="text" name="probeutos" id="probeutos" placeholder="Result EUTOS Probability" value="" readonly >
+            </li>
+            <li class="ui-field-contain">
                 <label for="textinput-1">EUTOS Score:</label>
-                <input type="text" name="riseutos" id="riseutos" placeholder="Result EUTOS Score" value="">
-            </div>
-            <a data-role="button" href="" onclick="borrarDatos();return false;">Limpiar</a>
+                <input type="text" name="riseutos" id="riseutos" placeholder="Result EUTOS Score" value="" readonly >
+            </li>
+            <a data-role="button" data-theme="b" href="" onclick="borrarDatos();return false;">Limpiar</a>
+            
+          </ul>  
+         </form>
         </div>
         <!--         pie de pagina                 -->
-        <div data-role="footer" data-position="fixed">
-            <a data-role="button" href="#pagina1">Principal</a>
-            <a data-role="button" href="#pagina2">Primero</a>
-            <a data-role="button" href="#">Segundo</a>
-            <a data-role="button" href="#pagina4">Tercero</a>
-        </div>
+       <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+			<ul>
+				<li><a href="#pagina1" data-icon="gear" >Inicio</a></li>
+				<li><a href="#pagina2" data-icon="custom" >S-H</a></li>
+				<li><a href="#pagina3" data-icon="custom" class="ui-btn-active">Eutos</a></li>
+                <li><a href="#pagina4" data-icon="mail">Resultado</a></li>
+			</ul>
+		</div>
+       </div>
     </div>
     
-    <div data-role="page" data-theme="b" id="pagina4">
+    <div data-role="page" id="pagina4" data-theme="a" >
         <!--         cabecera                 -->
         <div data-role="header">
             <h1>Resultados</h1>
@@ -280,41 +314,50 @@
         <!--         contenido                 -->
         <div data-role="content">
             <!-- data-inline="true" en todos los botones que se quiera es para colocar los botones horizaontales -->
-            <div class="ui-field-contain">
+            
+         <form class="est_fuente">
+           <ul data-role="listview" data-inset="true">
+            <li class="ui-field-contain">
                 <label for="textinput-1">Sokal RR:</label>
-                <input type="text" name="rissokal3" id="rissokal3" placeholder="Result Sokal" value="">
-            </div>
-            <div class="ui-field-contain">
+                <input type="text" name="rissokal3" id="rissokal3" placeholder="Result Sokal" value="" readonly>
+            </li>
+            <li class="ui-field-contain">
                 <label for="textinput-1">Hasford RR:</label>
-                <input type="text" name="riseuro3" id="riseuro3" placeholder="Result Hasford" value="">
-            </div>
-            <div class="ui-field-contain">
+                <input type="text" name="riseuro3" id="riseuro3" placeholder="Result Hasford" value="" readonly>
+            </li>
+            <li class="ui-field-contain">
                 <label for="textinput-1">EUTOS Risk group:</label>
-                <input type="text" name="teutos3" id="teutos3" placeholder="Result EUTOS Risk" value="">
-            </div>
-            <div class="ui-field-contain">
+                <input type="text" name="teutos3" id="teutos3" placeholder="Result EUTOS Risk" value="" readonly>
+            </li>
+            <li class="ui-field-contain">
                 <label for="textinput-1">EUTOS Probability for no CCgr at 18 months:</label>
-                <input type="text" name="probeutos3" id="probeutos3" placeholder="Result EUTOS Probability" value="">
-            </div>
-            <div class="ui-field-contain">
+                <input type="text" name="probeutos3" id="probeutos3" placeholder="Result EUTOS Probability" value="" readonly>
+            </li>
+            <li class="ui-field-contain">
                 <label for="textinput-1">EUTOS Score:</label>
-                <input type="text" name="riseutos3" id="riseutos3" placeholder="Result EUTOS Score" value="">
-            </div>
-            <div class="ui-field-contain">
+                <input type="text" name="riseutos3" id="riseutos3" placeholder="Result EUTOS Score" value="" readonly>
+            </li>
+            <li class="ui-field-contain">
                 <label for="textinput-1">Enviar a:</label>
                 <input type="text" name="correo" id="correo" placeholder="Ingrese el Email" value="">
-            </div>
+            </li>
             <div id="resultadoGenerarDatos">
             </div>
-            <a data-role="button" href="" onclick="generarDatos();return false;">Generar</a>
+            <a data-role="button" data-theme="b" data-icon="mail" href="" onclick="generarDatos();return false;">Enviar</a>
+          </ul> 
+         </form>   
         </div>
         <!--         pie de pagina                 -->
         <div data-role="footer" data-position="fixed">
-            <a data-role="button" href="#pagina1">Principal</a>
-            <a data-role="button" href="#pagina2">Primero</a>
-            <a data-role="button" href="#pagina3">Segundo</a>
-            <a data-role="button" href="#">Tercero</a>
-        </div>
+         <div data-role="navbar">
+			<ul>
+				<li><a href="#pagina1" data-icon="gear" >Inicio</a></li>
+				<li><a href="#pagina2" data-icon="custom" >S-H</a></li>
+				<li><a href="#pagina3" data-icon="custom" >Eutos</a></li>
+                <li><a href="#pagina4" data-icon="mail" class="ui-btn-active">Resultado</a></li>
+			</ul>
+		</div>
+       </div>
     </div>
 </body>
 </html>

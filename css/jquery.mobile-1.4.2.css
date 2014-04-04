@@ -2484,9 +2484,9 @@ button.ui-btn-icon-notext,
 	.ui-field-contain > label,
 	.ui-field-contain .ui-controlgroup-label,
 	.ui-field-contain > .ui-rangeslider > label {
-		float: left;
-		width: 20%;
-		margin: .5em 2% 0 0;
+	float: left;
+	width: 18%;
+	margin: .5em 2% 0 0;
 	}
 	.ui-popup .ui-field-contain > label,
 	.ui-popup .ui-field-contain .ui-controlgroup-label,
@@ -3205,7 +3205,7 @@ fieldset.ui-controlgroup {
  * |     +------------------+     |
  * |     |                  |     |
  * | left|                  |right|
- * |<--->|                  |<--->|
+ * |<-|                  |<-|
  * |     +------------------+     |
  *  \          ^                 /
  *   `.        v bottom        .'
@@ -3220,7 +3220,7 @@ fieldset.ui-controlgroup {
  *  / |     +------------------+     |
  *  \ |     |                  |     |
  *   \| left|                  |right|
- *    |<--->|                  |<--->|
+ *    |<-|                  |<-|
  *    |     +------------------+     |
  *     \          ^                 /
  *      `.        v bottom        .'
@@ -3259,7 +3259,7 @@ fieldset.ui-controlgroup {
  *                                           
  *           /\         /\                +----+       /\
  *          /  \       /  \               | /\ |top   /  \
- *      +----+  \     /  +----+       +-->|/  \|     /    \
+ *      +----+  \     /  +----+       +|/  \|     /    \
  *  left| /  |   \   /   |  \ |right  |   |    |    /      \
  *      |/   |    \ /    |   \|       |  /|    |\  /        \
  *      |\   |    / \    |   /|       | / +----+ \ \ +----+ /
