@@ -1,8 +1,8 @@
 <!DOCTYPE HTML><head>
-	<meta http-equiv="content-type" content="text/html" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="author" content="GatoLoco Studios S.A.S" />
  <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">-->
-	<title>Sin t�tulo 1</title>
+	<title>Sin título 1</title>
     
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.2.css"/>
    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.2.css"/>-
@@ -58,13 +58,13 @@
     		euro=(a+b+c+d+e+f)*1000;
     		euro=Math.floor(euro*100)/100
 
-    		if (calcolosokal < 0.8){$("#rissokal3").val(calcolosokal+" low");$("#rissokal").val(calcolosokal+" low");}
-    		else if (calcolosokal >= 0.8 && calcolosokal <= 1.2){$("#rissokal3").val(calcolosokal+" intermediate");$("#rissokal").val(calcolosokal+" intermediate");}
-    		else if (calcolosokal > 1.2){$("#rissokal").val(calcolosokal+" high");$("#rissokal3").val(calcolosokal+" high");}
+    		if (calcolosokal < 0.8){$("#rissokal3").val(calcolosokal+" LOW :::: 78%(CCyR 12 m.)  ::::  90.8%(EFS 6 y)  ::::  94%(OS 6 y)");$("#rissokal").val(calcolosokal+" LOW :::: 78%(CCyR 12 m.)  ::::  90.8%(EFS 6 y)  ::::  94%(OS 6 y)");}
+    		else if (calcolosokal >= 0.8 && calcolosokal <= 1.2){$("#rissokal3").val(calcolosokal+" INTERMEDIATE :::: 68%(CCyR 12 m.)  ::::  81.3%(EFS 6 y)  ::::  87%(OS 6 y)");$("#rissokal").val(calcolosokal+" INTERMEDIATE ::::  68%(CCyR 12 m.)  ::::  81.3%(EFS 6 y)  ::::  87%(OS 6 y)");}
+    		else if (calcolosokal > 1.2){$("#rissokal").val(calcolosokal+" high 51%(CCyR 12 m.)  ::::  67.3%(EFS 6 y)  ::::  76%(OS 6 y)");$("#rissokal3").val(calcolosokal+" HIGH 51%(CCyR 12 m.) :::: 67.3%(EFS 6 y) :::: 76%(OS 6 y)");}
             
-    		if (euro < 781){$("#riseuro").val(euro+" low");$("#riseuro3").val(euro+" low");}
-    		else if (euro >= 781 && euro <= 1480){$("#riseuro").val(euro+" intermediate");$("#riseuro3").val(euro+" intermediate");}
-    		else if (euro > 1480){$("#riseuro").val(euro+" intermediate");$("#riseuro3").val(euro+" intermediate");}
+    		if (euro < 781){$("#riseuro").val(euro+" LOW :::: 78%(CCyR 12 m.) :::: 90.8%(EFS 6 y)  ::::  94%(OS 6 y)");$("#riseuro3").val(euro+" LOW :::: 78%(CCyR 12 m.)  ::::  90.8%(EFS 6 y)  ::::  94%(OS 6 y)");}
+    		else if (euro >= 781 && euro <= 1480){$("#riseuro").val(euro+" INTERMEDIATE :::: 68%(CCyR 12 m.)  ::::  81.3%(EFS 6 y)  ::::  87%(OS 6 y)");$("#riseuro3").val(euro+" INTERMEDIATE ::::  68%(CCyR 12 m.)  ::::  81.3%(EFS 6 y)  ::::  87%(OS 6 y)");}
+    		else if (euro > 1480){$("#riseuro").val(euro+" INTERMEDIATE :::: 68%(CCyR 12 m.) ::::  81.3%(EFS 6 y)  ::::  87%(OS 6 y)");$("#riseuro3").val(euro+" INTERMEDIATE :::: 51%(CCyR 12 m.)  ::::  67.3%(EFS 6 y)  ::::  76%(OS 6 y)");}
     	}
     </script>
     <script>
@@ -102,8 +102,8 @@
             $("#riseutos3").val(eutossc);
             
            
-            if (eutossc > 87) {$("#teutos").val("high");$("#teutos3").val("high");}
-            else if (eutossc <= 87) {$("#teutos").val("low");$("#teutos3").val("low");}
+            if (eutossc > 87) {$("#teutos").val("HIGH :::: 65.8%(CCyR 18 m.)");$("#teutos3").val("HIGH 65.8%(CCyR 18 m.)");}
+            else if (eutossc <= 87) {$("#teutos").val("LOW");$("#teutos3").val("LOW");}
         }
     </script>
     <script>
@@ -160,11 +160,20 @@
             })
         }
     </script>
-    
+    <style>
+        #input.author
+        { 
+            background-position: left center; 
+            padding-left: 17px; 
+            width:183px; 
+            background-image: url(images/user.gif); 
+            background-repeat: no-repeat; 
+        }
+    </style>
 </head>
 
 <body>
-    <div data-role="page" id="pagina1"  data-theme="a" >
+    <div data-role="page" id="home"  data-theme="a" >
         <!--         cabecera                 -->
         <div data-role="header">
             <h1>Bienvenido</h1>
@@ -172,16 +181,42 @@
         <!--         contenido                 -->
         <div data-role="content">
             <!-- data-inline="true" en todos los botones que se quiera es para colocar los botones horizaontales -->
-            Este es el contenido principal
+
+			
+                                       
+                   <div> 
+                    <div id="logo_image"> 
+                    <img src="img/logo2.png" width="35%" style="margin-top:10%"  alt=""/>
+                    <img src="img/logo_Text.svg" width="120%" style="margin-left:-10%"  alt=""/>
+                    </div>
+                  
+                    
+                    <div data-role="collapsible">
+                    <h4>Información:</h4>
+                     <p style="text-align:justify">Esta aplicación realiza los cálculos de riesgo en 3 diferentes escalas, definiendo la posibilidad de logar los objetivos del tratamiento y contiene además algunos de los datos mas usados en la terapia de Leucemia Mieloide Crónica</p> </p>
+           </div>
+                   
+                    
+                    
+                    
+                    <div data-role="collapsible">
+                    <h4>Referencias:</h4>
+                    <p><strong>Escala Sokal:</strong> JE Sokal et al. Blood 1984; Vol.63: pp789-799<br />
+                    <strong>Ecala Hasford:</strong> J Hasford et al. JNTL Cancer Inst 1998; Vol 90: pp 850-858 <br />
+                    <strong>Escala EUTOS:</strong> J Hasford et al. Blood 2011; Vol 118: pp 686-692<br />
+                    <strong>Recomendaciones Leukemia.net:</strong> M Baccarani et al; Vol122: pp872-884 </p>
+           </div>
+         </div>   
+       
         </div>
         
         <div data-role="footer" data-position="fixed">
 		<div data-role="navbar">
 			<ul>
-				<li><a href="#page1" data-icon="gear" class="ui-btn-active">Inicio</a></li>
-				<li><a href="#pagina2" data-icon="custom" >S-H</a></li>
-				<li><a href="#pagina3" data-icon="custom">Eutos</a></li>
-                <li><a href="#pagina4" data-icon="mail">Resultado</a></li>
+				<li><a href="#S_H" data-icon="custom" >S-H</a></li>
+				<li><a href="#eutos" data-icon="custom">Eutos</a></li>
+                <li><a href="#resultados" data-icon="mail">Resultado</a></li>
+                <li><a href="#tablas" data-icon="form">Tablas</a></li>
 			</ul>
 		</div><!-- /navbar -->
 	</div><!-- /footer -->
@@ -194,15 +229,23 @@
         </div>-->
     </div>
     
-    <div data-role="page" id="pagina2" data-theme="a" >
+    <div data-role="page" id="S_H" data-theme="a" >
         <!--         cabecera                 -->
         <div data-role="header">
-            <h1>Sokal y Hasford</h1>
+            <h1>Sokal y Hasford </h1>
+            <div class="inicio"><a href="#home" data-icon="home" ><img src="img/icons-svg/home-black.svg" width:"auto" height="30px" alt=""/></a></div>
         </div>
         <!--         contenido                 -->
         <div data-role="content">
             <!-- data-inline="true" en todos los botones que se quiera es para colocar los botones horizaontales -->
-		<form class="est_fuente">
+		
+        	<div data-role="collapsible" >
+                    <h4>Hoja de Cálculo</h4>
+                    <p style="color:#B40A0A">El cálculo de riesgo debe realizarse siempre en el paciente con diagnostico de novo, no aplica para pacientes previamente tratados.
+                    </p>
+                    </div>
+        
+        <form class="est_fuente">
            <ul data-role="listview" data-inset="true">
             <li class="ui-field-contain">
                 <label for="textinput-1">Age:</label>
@@ -231,38 +274,81 @@
             <a data-role="button" data-theme="b" href="" onclick="cs();return false;">Calcular</a>
             <li class="ui-field-contain">
                 <label for="textinput-1">Sokal RR:</label>
-                <input type="text" name="rissokal" id="rissokal" placeholder="Result Sokal" value="" readonly>
+               
+                    <input type="text" name="rissokal" id="rissokal" placeholder="Result Sokal" value="" readonly>
+                    <a href="#popupBasic" data-rel="popup">?</a>
+              
+                <div data-role="popup" id="popupBasic">
+                    <p>
+                        RIESGOS:<br />
+                        ALTO: ≥ 1.2<br />
+                        INTERMEDIO: 0.8 – 1.2<br />
+                        BAJO: ≤ 0.8<br />
+                    </p>
+                </div>
             </li>
             <li class="ui-field-contain">
                 <label for="textinput-1">Hasford RR:</label>
-                <input type="text" name="riseuro" id="riseuro" placeholder="Result Hasford" value="" readonly>
+
+                    <input type="text" name="riseuro" id="riseuro" placeholder="Result Hasford" value="" readonly>
+                    <a href="#popupBasic2" data-rel="popup">?</a>
+       
+                <div data-role="popup" id="popupBasic2">
+                    <p>
+                        RIESGOS:<br />
+                        ALTO:  ≥1480<br />
+                        INTERMEDIO: 781 – 1480<br />
+                        BAJO:  ≤781<br />
+
+                    </p>
+                </div>
+                
+                
             </li>
             <a data-role="button" data-theme="b" href="" onclick="borrarDatos();return false;">Limpiar</a>
         </ul>
      </form>
+     
+     <div data-role="collapsible" >
+                    <h4>Referencias</h4>
+                    <p><strong>A Hochhaus et al.</strong> Leukemia 2009; Vol 23: pp 1054-61 <br/>
+                      <strong>SG O´Brien et al.</strong> N Engl J Med 2003; Vol 348: pp 994-1004 <br/>
+       <strong>M Baccarani et al.</strong> J Clin Oncol  2009: Vol 27: pp 6041-6051 </p>
+                    </div>
+     
         </div>
         <!--         pie de pagina 
                         -->
       <div data-role="footer" data-position="fixed">
         <div data-role="navbar">
-			<ul>
-				<li><a href="#pagina1" data-icon="gear" >Inicio</a></li>
-				<li><a href="#pagina2" data-icon="custom" class="ui-btn-active">S-H</a></li>
-				<li><a href="#pagina3" data-icon="custom">Eutos</a></li>
-                <li><a href="#pagina4" data-icon="mail">Resultado</a></li>
+			
+            <ul>
+				<li><a href="#S_H" data-icon="custom" class="ui-btn-active" >S-H</a></li>
+				<li><a href="#eutos" data-icon="custom">Eutos</a></li>
+                <li><a href="#resultados" data-icon="mail">Resultado</a></li>
+                <li><a href="#tablas" data-icon="form">Tablas</a></li>
 			</ul>
+         
+           
 		</div>
        </div>
     </div>
     
-    <div data-role="page" id="pagina3" data-theme="a" >
+    <div data-role="page" id="eutos" data-theme="a" >
         <!--         cabecera                 -->
         <div data-role="header">
             <h1>Eutos Risk and Probability</h1>
+            <div class="inicio"><a href="#home" data-icon="home" ><img src="img/icons-svg/home-black.svg" width:"auto" height="30px" alt=""/></a></div>
         </div>
         <!--         contenido                 -->
         <div data-role="content">
             <!-- data-inline="true" en todos los botones que se quiera es para colocar los botones horizaontales -->
+          
+          <div data-role="collapsible" >
+                    <h4>Hoja de Cálculo</h4>
+                    <p style="color:#B40A0A">El cálculo de riesgo debe realizarse siempre en el paciente con diagnostico de novo, no aplica para pacientes previamente tratados.
+                    </p>
+                    </div>
             
          <form class="est_fuente"> 
          <ul data-role="listview" data-inset="true">
@@ -292,24 +378,31 @@
             
           </ul>  
          </form>
+         
+          <div data-role="collapsible" >
+                    <h4>Referencias</h4>
+                    <p><strong>Escala EUTOS: </strong>J Hasford et al. Blood 2011; Vol 118: pp 686-692 </p>
+                    </div>
         </div>
         <!--         pie de pagina                 -->
        <div data-role="footer" data-position="fixed">
         <div data-role="navbar">
-			<ul>
-				<li><a href="#pagina1" data-icon="gear" >Inicio</a></li>
-				<li><a href="#pagina2" data-icon="custom" >S-H</a></li>
-				<li><a href="#pagina3" data-icon="custom" class="ui-btn-active">Eutos</a></li>
-                <li><a href="#pagina4" data-icon="mail">Resultado</a></li>
+			
+           <ul>
+				<li><a href="#S_H" data-icon="custom">S-H</a></li>
+				<li><a href="#eutos" data-icon="custom" class="ui-btn-active" >Eutos</a></li>
+                <li><a href="#resultados" data-icon="mail">Resultado</a></li>
+                <li><a href="#tablas" data-icon="form">Tablas</a></li>
 			</ul>
 		</div>
        </div>
     </div>
     
-    <div data-role="page" id="pagina4" data-theme="a" >
+    <div data-role="page" id="resultados" data-theme="a" >
         <!--         cabecera                 -->
         <div data-role="header">
             <h1>Resultados</h1>
+            <div class="inicio"><a href="#home" data-icon="home" ><img src="img/icons-svg/home-black.svg" width:"auto" height="30px" alt=""/></a></div>
         </div>
         <!--         contenido                 -->
         <div data-role="content">
@@ -350,14 +443,282 @@
         <!--         pie de pagina                 -->
         <div data-role="footer" data-position="fixed">
          <div data-role="navbar">
-			<ul>
-				<li><a href="#pagina1" data-icon="gear" >Inicio</a></li>
-				<li><a href="#pagina2" data-icon="custom" >S-H</a></li>
-				<li><a href="#pagina3" data-icon="custom" >Eutos</a></li>
-                <li><a href="#pagina4" data-icon="mail" class="ui-btn-active">Resultado</a></li>
+			  <ul>
+				<li><a href="#S_H" data-icon="custom">S-H</a></li>
+				<li><a href="#eutos" data-icon="custom"  >Eutos</a></li>
+                <li><a href="#resultados" data-icon="mail" class="ui-btn-active">Resultado</a></li>
+                <li><a href="#tablas" data-icon="form">Tablas</a></li>
 			</ul>
 		</div>
        </div>
     </div>
+    
+   <!-- Pagina tablas-->
+   
+   	<div data-role="page" id="tablas" data-theme="a" >
+        <!--         cabecera                 -->
+        <div data-role="header">
+            <h1>Tablas</h1>
+            <div class="inicio"><a href="#home" data-icon="home" ><img src="img/icons-svg/home-black.svg" width:"auto" height="30px" alt=""/></a></div>
+        </div>
+        <!--         contenido                 -->
+        <div data-role="content">
+            <!-- data-inline="true" en todos los botones que se quiera es para colocar los botones horizaontales -->
+            
+             <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d".>
+                    <h4>Fases de Leucemia Mieloide Crónica (Tabla  1)</h4>
+                    <table width="100%%" border="0">
+  <tr>
+    <td bgcolor="#C5C5C5"><strong>Accelerated phase</strong></td>
+    <td width="67%" bgcolor="#C5C5C5"> <strong>Definition</strong></td>
+  </tr>
+  <tr>
+    <td valign="top">ELN criteria</td>
+    <td bgcolor="#D9D9D9"><p> Blasts in blood or marrow 15-29%, or blasts plus promyelocytes in blood or marrow &gt;30%, with blasts &lt;30% <br>
+      Basophils in blood &ge;20% <br>
+      Persistent thrombocytopenia (&lt;100 x 10<sup>9</sup>/L) unrelated to therapy <br>
+      Clonal chromosome abnormalities in Ph+ cells (CCA/Ph+), major route, on treatment</p></td>
+  </tr>
+  <tr>
+    <td valign="top">WHO criteria</td>
+    <td>Blasts in blood or marrow 10-19% <br>
+      Basophils in blood &ge;20% <br>
+      Persistent thrombocytopenia  (&lt;100 x 10<sup>9</sup>/L)  unrelated to therapy <br>
+      CCA/Ph+ on treatment
+      <br>
+      Thrombocytosis (&gt;1000 x 10<sup>9</sup>/L) unresponsive to therapy <br>
+      Increasing spleen size and increasing white blood cell count unresponsive to therapy</td>
+  </tr>
+  <tr>
+    <td colspan="2"><strong>Blast phase</strong></td>
+  </tr>
+  <tr>
+    <td valign="top">ELN criteria</td>
+    <td valign="top" bgcolor="#D9D9D9"> Blasts in blood or marrow &ge;30% <br>
+      Extramedullary blast proliferation, apart from spleen</td>
+  </tr>
+  <tr>
+    <td valign="top">WHO criteria</td>
+    <td><p> Blasts in blood or marrow &ge;20% <br>
+      Extramedullary blast proliferation, apart from spleen<br>
+      Large foci or clusters of blasts in the bone marrow biopsy</p></td>
+  </tr>
+</table>
+<p>The ELN criteria are those that were used in all main studies of TKI. The use of TKI may require a change of the boundaries between CP, AP, and BP and modify to some extent the classic subdivision of CML in 3 phases, but the data are not yet sufficient for a revision.
+
+CCA/Ph+, clonal chromosome abnormalities in Ph+ cells.</p>
+           
+                    
+             </div>
+             
+           <!--Tabla2-->
+            <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d".>
+                    <h4> Objetivos de Respuesta en Primera Línea (Tabla 5 )</h4>
+                    <table width="100%%" border="1">
+  <tr>
+    <td width="23%">&nbsp;</td>
+    <td width="18%">Optimal </td>
+    <td width="35%">Warning </td>
+    <td width="24%">Failure</td>
+  </tr>
+  <tr>
+    <td>Baseline </td>
+    <td> NA</td>
+    <td>High risk Or
+CCA/Ph+, major route</td>
+    <td>NA</td>
+  </tr>
+  <tr>
+    <td>3 mo</td>
+    <td><p> BCR-ABL1 &le; 10% and/or Ph +&le;35%</p></td>
+    <td><p>BCR-ABL1 &gt;10% and/or Ph+ 36-95%</p></td>
+    <td><p>Non-CHR and/or Ph +&gt;95%</p></td>
+  </tr>
+  <tr>
+    <td>6 mo</td>
+    <td> BCR-ABL1 ,1% and/or Ph+ 0</td>
+    <td>BCR-ABL1 1-10% and/or Ph+ 1-35%</td>
+    <td><p>BCR-ABL1 &gt;10% and/or Ph+ &gt;35%</p></td>
+  </tr>
+  <tr>
+    <td>12 mo   </td>
+    <td>BCR-ABL1 &le;0.1%</td>
+    <td>BCR-ABL1 &gt;0.1-1%</td>
+    <td>BCR-ABL1 &gt;1%  and/or
+Ph+ &gt;0</td>
+  </tr>
+  <tr>
+    <td>Then, and at any time</td>
+    <td>BCR-ABL1  &le;0.1% </td>
+    <td>CCA/Ph– (–7, or 7q–) </td>
+    <td>Loss of CHR  Loss of CCyR
+Confirmed loss of
+MMR*
+Mutations
+CCA/Ph+</td>
+  </tr>
+</table>
+<p>The definitions are the same for patients in CP, AP, and BP and apply also to second-line treatment, when first-line treatment was changed for intolerance. The response can be assessed with either a molecular or a cytogenetic test, but both are recommended whenever possible. Cutoff values have been used to define the boundaries between optimal and warning, and between warning and failures. Because cutoff values are subjected to fluctuations, in case of cytogenetic or molecular data close to the indicated values, a repetition of the tests is recommended. After 12 months, if an MMR is achieved, the response can be assessed by real quantitative polymerase chain reaction (RQ-PCR) every 3 to 6 months, and cytogenetics is required only in case of failure or if standardized molecular testing is not available. Note that MMR (MR<sup>3.0</sup> or better) is optimal for survival but that a deeper response is likely to be required for a successful discontinuation of treatment.
+
+NA, not applicable; MMR, BCR-ABL1  &le;0.1% = MR<sup>3.0</sup> or better; CCA/Ph+, clonal chromosome abnormalities in Ph+ cells; CCA/Ph–, clonal chromosome abnormalities in Ph– cells.
+<br />
+*In 2 consecutive tests, of which one with a BCR-ABL1 transcripts level &ge;1%.</p>
+            
+            </div>
+            
+ <div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d".>
+                    <h4> Objetivos de Respuesta en Segunda Línea ( Tabla 6)</h4>           
+            <table width="100%%" border="1">
+  <tr>
+    <td width="25%">&nbsp;</td>
+    <td width="18%">Optimal </td>
+    <td width="27%">Warning </td>
+    <td width="30%">Failure</td>
+  </tr>
+  <tr>
+    <td>Baseline </td>
+    <td>NA</td>
+    <td><p> No CHR or loss of CHR on imatinib or lack of CyR to first-line TKI or high risk</p></td>
+    <td>NA</td>
+  </tr>
+  <tr>
+    <td>3 mo</td>
+    <td><p> BCR-ABL1 &le;10% and/or Ph+ &lt; 65% </p></td>
+    <td><p>BCR-ABL1 &gt;10% and/or Ph+ 65-95%</p></td>
+    <td><p>No CHR or Ph+ &gt;95% or new mutations</p></td>
+  </tr>
+  <tr>
+    <td>6 mo </td>
+    <td><p>BCR-ABL1 &le;10% and/or Ph+ &lt; 35%</p></td>
+    <td>Ph+ 35-65%</td>
+    <td><p> BCR-ABL1 &gt;10% and/or Ph+ &gt;65% and/or new mutations</p></td>
+  </tr>
+  <tr>
+    <td>12 mo</td>
+    <td><p> BCR-ABL1 &lt;1% and/or Ph+ 0</p></td>
+    <td>BCR-ABL1 1-10% and/or Ph+ 1-35%</td>
+    <td><p>BCR-ABL1 &gt;10% and/or Ph+ &gt;35% and/or new mutations</p></td>
+  </tr>
+  <tr>
+    <td>Then, and at any time</td>
+    <td><p>BCR-ABL1 &le;0.1%</p></td>
+    <td><p>CCA/Ph– (–7 or 7q–) or BCR-ABL1 &gt;0.1%</p></td>
+    <td><p>Loss of CHR or loss of CCyR or PCyR New mutations Confirmed loss of MMR* CCA/Ph+</p></td>
+  </tr>
+</table>
+<p>These definitions are mainly based on data reported for nilotinib and dasatinib,5,42-46,69,77,104-109 but can be used provisionally also for bosutinib and ponatinib, until more data are available. These definitions cannot apply to the evaluation of the response to third-line treatment. <br/>
+
+NA, not applicable; MMR, BCR-ABL1 &ge;0.1% = MR3.0 or better; CCA/Ph+, clonal chromosome abnormalities in Ph+ cells; CCA/Ph–, clonal chromosome abnormalities in Ph– cells.
+
+*In 2 consecutive tests, of which one with a BCR-ABL transcripts level &ge;1%.</p>
+            
+           </div>
+ 
+<div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d".>
+                    <h4> Recomendaciones de terapia en fase crónica Tabla 7</h4>
+                    
+                  <table width="100%%" border="1">
+  <tr>
+    <td><strong>First line</strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Imatinib or nilotinib or dasatinib</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;HLA type patients and siblings only in case of baseline warnings (high risk, major route CCA/Ph+)</td>
+  </tr>
+  <tr>
+    <td><strong>Second line, intolerance to the first TKI</strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Anyone of the other TKIs approved first line (imatinib, nilotinib, dasatinib)</td>
+  </tr>
+  <tr>
+    <td><strong>Second line, failure of imatinib first line</strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Dasatinib or nilotinib or bosutinib or ponatinib</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;HLA type patients and siblings</td>
+  </tr>
+  <tr>
+    <td><strong>Second line, failure of nilotinib first line</strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Dasatinib or bosutinib or ponatinib</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;HLA type patients and siblings; search for an unrelated stem cell donor; consider alloSCT</td>
+  </tr>
+  <tr>
+    <td><strong>Second line, failure of dasatinib first line</strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Nilotinib or bosutinib or ponatinib</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;HLA type patients and siblings; search for an unrelated stem cell donor; consider alloSCT</td>
+  </tr>
+  <tr>
+    <td><strong>Third line, failure of and/or intolerance to 2 TKIs</strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Anyone of the remaining TKIs; alloSCT recommended in all eligible patients</td>
+  </tr>
+  <tr>
+    <td><strong>Any line, T315I mutation</strong></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;Ponatinib</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;HLA type patients and siblings; search for an unrelated stem cell donor; consider alloSCT</td>
+  </tr>
+</table>
+
+<p>In first line, the choice is among 3 TKIs that are currently approved and available, but are not always reimbursable, worldwide. The approved doses are 400 mg once daily for imatinib, 300 mg twice daily for nilotinib, and 100 mg once daily for dasatinib. Higher doses of all 3 drugs were tested, and a superiority of a higher dose was reported only in 1 study of imatinib.<sup>31</sup> There are no recognized and solid criteria that can be recommended for making the choice. Provisional clinical criteria can be the characteristics of the disease (high risk, CCA/Ph+) on one hand, and the relationship between the patient (comorbidities) and the safety profile of the drugs on the other hand. In second line, a change of drug is preferred to an increase of imatinib dose.<sup>5,42-50</sup> To make the switch from one TKI to another, there are things that must always be taken into account: the presence and type of a mutation (see Table 4), the side effects and the toxicity of the previous TKI, and different comorbidities that can be of concern with different TKIs. The definition of intolerance may sometimes be objective and based on evidence, but sometimes is subjective and open to criticism. Experience and common sense suggest that a patient who is intolerant to 1 TKI can easily respond to other TKIs, whereas a patient in whom 1 TKI has failed, and who is intolerant to another TKI, is at considerable risk of subsequent treatment failure. Recommendations for alloSCT are based on the results from HLA-identical siblings or HLA-matched unrelated donors, myeloablative and RIC,
+
+T-cell replete or T-cell depleted. They do not include cord blood or haplotype-matched donors, or experimental conditioning regimens. The EBMT risk score<sup>125</sup> is still of value, although insufficient numbers of patients have been transplanted in recent years and after TKI therapy to allow a robust reanalysis.</p>  
+</div>
+
+
+<div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d".>
+                    <h4> Recomendaciones de terapia en fase acelerada y blástica (Tabla 8)</h4>
+<table width="100%%" border="1">
+  <tr>
+    <td>AP and BP in newly diagnosed, TKI-na¨ıve patients</td>
+    <td><p>Imatinib 400 mg twice daily or dasatinib 70 mg twice daily or 140 mg once daily Stem cell donor search.</p>
+      <p>Then, alloSCT is recommended for all BP patients and for the AP patients who do not achieve an optimal response.</p>
+    <p>Chemotherapy may be required before alloSCT, to control the disease.</p></td>
+  </tr>
+  <tr>
+    <td>AP and BP as a progression from CP in TKI-pretreated patients</td>
+    <td><p>Anyone of the TKIs that were not used before progression (ponatinib in case of T315I mutation), then alloSCT in all patients.</p>
+    <p>Chemotherapy is frequently required to make patients eligible for alloSCT.</p></td>
+  </tr>
+</table>
+
+<p>In treatment-na¨ıve patients, AP is believed to be close to high-risk CP, so that
+
+TKIs have priority. In patients who progress to AP or BP during TKI therapy, the response to any subsequent treatment is poorer, and less durable, so that alloSCT is recommended for all patients who are eligible for the procedure. However, in these patients, not only TKIs but also cytotoxic chemotherapy may be necessary to reinsert some degree of remission to permit alloSCT. In case of uncontrolled, resistant BP, alloSCT is not recommended. All recommendations for alloSCT imply that the patient is eligible for that procedure. Note that nilotinib was tested, but not approved, for the treatment of BP.<sup>119,121,122</sup></p>
+</div>          
+            
+            
+            
+        </div>
+        <!--         pie de pagina                 -->
+        <div data-role="footer" data-position="fixed">
+         <div data-role="navbar">
+			 <ul>
+				<li><a href="#S_H" data-icon="custom">S-H</a></li>
+				<li><a href="#eutos" data-icon="custom" >Eutos</a></li>
+                <li><a href="#resultados" data-icon="mail">Resultado</a></li>
+                <li><a href="#tablas" data-icon="form" class="ui-btn-active" >Tablas</a></li>
+			</ul>
+		</div>
+       </div>
+    </div>
+    
 </body>
 </html>

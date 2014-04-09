@@ -587,3 +587,32 @@ button[disabled],
 h1 {
 	font-size:15px !important;
 	}
+	
+	
+/*Logo centrado*/
+
+#logo_image {
+	text-align: center;
+  margin-left:0 auto;
+  margin-right:0 auto;
+	}
+/*	
+#pagina1 {background: url(file:///C|/wamp/www/Calculadora2/img/background.jpg); background-repeat: no-repeat; background-origin: content-box;-moz-background-origin:content-box;-webkit-background-origin:content-box;-o-background-origin:content-box;  border: 1px solid #000000; background-position:center; padding: 20px;}*/
+
+#home {
+	width: 100%;
+height: auto;
+background-image: url(../img/background.jpg);
+background-repeat: no-repeat;
+background-color: #EEE;
+background-size: cover;
+}
+	
+.inicio {
+	position: absolute;
+	margin: 0px;
+	padding: 0px;
+	right: 10px;
+	top: 2px;
+	}
+	}
